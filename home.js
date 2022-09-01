@@ -4,7 +4,7 @@ function createHome() {
 
     const chefImage = document.createElement('img');
     chefImage.src = 'images/nicaraguan_food.jpg';
-    chefImage.alt = 'Chef';
+    chefImage.alt = 'Comida Nica';
 
     home.appendChild(createParagraph('Delicioso Comida Nicaraguense'));
     home.appendChild(createParagraph('Delicious Nicaraguan Food Awaits!'))
