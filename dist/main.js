@@ -1,1 +1,1 @@
-console.log("Hello World!");
+(()=>{const e=document.querySelector("#content"),t=document.createElement("header"),n=document.createElement("div"),d=document.createElement("footer");t.classList.add("header"),t.textContent="Fritanga",e.appendChild(t),n.classList.add("main"),n.textContent="Middle Bit",e.appendChild(n),d.classList.add("footer"),d.textContent=`Copyright © ${(new Date).getFullYear()} josearguello`,e.appendChild(d)})();
