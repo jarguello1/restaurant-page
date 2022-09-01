@@ -37,7 +37,7 @@ header {
 header .navBar {
     width: 60vh;
     display: flex;
-
+    justify-content: space-between;
 }
 
 header button {
