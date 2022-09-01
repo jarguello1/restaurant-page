@@ -1,3 +1,5 @@
+import loadHome from "../home";
+
 const content = document.querySelector('#content');
 const header = document.createElement('header');
 const main = document.createElement('div');
@@ -13,15 +15,28 @@ function createHeader() {
     navBar.classList.add('navBar');
     header.appendChild(navBar);
 
-    //create Nav Buttons
-    navList = ['home', 'menu', 'contact'];
-    navList.forEach(function(e) {
-        const navBtn = document.createElement('button');
-        navBtn.classList.add('navBtn');
-        navBtn.setAttribute('id', e);
-        navBtn.textContent = e;
-        navBar.appendChild(navBtn);
-    })
+    (function createNav() {
+        const homeBtn = document.createElement('button');
+        homeBtn.classList.add('navBtn');
+        homeBtn.setAttribute('id', 'home');
+        homeBtn.textContent = 'Home';
+        //homeBtn.addEventListener('click', homePage);
+        navBar.appendChild(homeBtn);
+
+        const menuBtn = document.createElement('button');
+        menuBtn.classList.add('navBtn');
+        menuBtn.setAttribute('id', 'menu');
+        menuBtn.textContent = 'Menu';
+        //menuBtn.addEventListener('click', menuPage);
+        navBar.appendChild(menuBtn);
+
+        const contactBtn = document.createElement('button');
+        contactBtn.classList.add('navBtn');
+        contactBtn.setAttribute('id', 'contact');
+        contactBtn.textContent = 'Contact';
+        //contactBtn.addEventListener('click', contactPage);
+        navBar.appendChild(contactBtn);
+    })();
 
     content.appendChild(header);
 }
@@ -29,7 +44,6 @@ function createHeader() {
 //create main body
 function createMain() {
     main.classList.add('main');
-    main.textContent = "Middle Bit";
     content.appendChild(main);
 }
 
@@ -47,14 +61,5 @@ function createFooter() {
 })();
 
 
-const homeBtn = document.getElementById('home');
-homeBtn.textContent = "Home"
-//homeBtn.addEventListener('click', homePage);
-
-const menuBtn = document.getElementById('menu');
-menuBtn.textContent = 'Menu';
-//menuBtn.addEventListener('click', menuPage);
-
-const contactBtn = document.getElementById('contact');
-contactBtn.textContent = "Contact";
-//contactBtn.addEventListener('click', contactPage);
+function navFunctions() {
+}
