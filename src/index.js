@@ -20,7 +20,7 @@ function createHeader() {
         navBtn.classList.add('navBtn');
         navBtn.setAttribute('id', e);
         navBtn.textContent = e;
-        header.appendChild(navBtn);
+        navBar.appendChild(navBtn);
     })
 
     content.appendChild(header);
