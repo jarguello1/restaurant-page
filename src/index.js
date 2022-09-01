@@ -20,21 +20,23 @@ function createHeader() {
         homeBtn.classList.add('navBtn');
         homeBtn.setAttribute('id', 'home');
         homeBtn.textContent = 'Home';
-        //homeBtn.addEventListener('click', homePage);
-        navBar.appendChild(homeBtn);
+        homeBtn.addEventListener('click', loadHome);
 
         const menuBtn = document.createElement('button');
         menuBtn.classList.add('navBtn');
         menuBtn.setAttribute('id', 'menu');
         menuBtn.textContent = 'Menu';
         //menuBtn.addEventListener('click', menuPage);
-        navBar.appendChild(menuBtn);
 
         const contactBtn = document.createElement('button');
         contactBtn.classList.add('navBtn');
         contactBtn.setAttribute('id', 'contact');
         contactBtn.textContent = 'Contact';
         //contactBtn.addEventListener('click', contactPage);
+
+
+        navBar.appendChild(homeBtn);
+        navBar.appendChild(menuBtn);
         navBar.appendChild(contactBtn);
     })();
 
@@ -43,7 +45,9 @@ function createHeader() {
 
 //create main body
 function createMain() {
+    const main = document.createElement('main');
     main.classList.add('main');
+    main.setAttribute('id', 'main');
     content.appendChild(main);
 }
 
@@ -58,8 +62,7 @@ function createFooter() {
     createHeader();
     createMain();
     createFooter();
+
+    loadHome();
 })();
 
-
-function navFunctions() {
-}
