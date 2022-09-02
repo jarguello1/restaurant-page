@@ -11,7 +11,7 @@ const footer = document.createElement('footer');
 function createHeader() {
 
     header.classList.add('header');
-    header.textContent = "Fritanga";
+    header.textContent = 'Fritanga';
     
     const navBar = document.createElement('div');
     navBar.classList.add('navBar');
@@ -22,19 +22,31 @@ function createHeader() {
         homeBtn.classList.add('navBtn');
         homeBtn.setAttribute('id', 'homeBtn');
         homeBtn.textContent = 'Home';
-        homeBtn.addEventListener('click', loadHome);
+        homeBtn.addEventListener('click', (e) => {
+            if (e.target.classList.contains('active')) return;
+            setActiveButton(homeBtn);
+            loadHome();
+          });
 
         const menuBtn = document.createElement('button');
         menuBtn.classList.add('navBtn');
         menuBtn.setAttribute('id', 'menuBtn');
         menuBtn.textContent = 'Menu';
-        menuBtn.addEventListener('click', loadMenu);
+        menuBtn.addEventListener('click', (e) => {
+            if (e.target.classList.contains('active')) return;
+            setActiveButton(menuBtn);
+            loadMenu();
+          });
 
         const contactBtn = document.createElement('button');
         contactBtn.classList.add('navBtn');
         contactBtn.setAttribute('id', 'contactBtn');
         contactBtn.textContent = 'Contact';
-        contactBtn.addEventListener('click', loadContact);
+        contactBtn.addEventListener('click', (e) => {
+            if (e.target.classList.contains('active')) return;
+            setActiveButton(contactBtn);
+            loadContact();
+          });
 
 
         navBar.appendChild(homeBtn);
@@ -60,11 +72,25 @@ function createFooter() {
     content.appendChild(footer);
 }
 
+function setActiveButton(button) {
+    const buttons = document.querySelectorAll('.navBtn');
+  
+    buttons.forEach((button) => {
+      if (button !== this) {
+        button.classList.remove('active');
+      }
+    });
+  
+    button.classList.add('active');
+  }
+
 (function () {
     createHeader();
     createMain();
     createFooter();
 
+
+    setActiveButton(document.querySelector(".navBtn"));
     loadHome();
 })();
 
