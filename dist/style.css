@@ -82,7 +82,21 @@ header button {
 
 .menuContainer img {
     height: 200px;
-    width: 200px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color:  rgb(18, 17, 109);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#contact img {
+    height: 500px;
 }
 
 footer {

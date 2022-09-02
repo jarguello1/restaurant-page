@@ -1,5 +1,6 @@
 import loadHome from "../home";
 import loadMenu from "../menu";
+import loadContact from "../contact";
 
 const content = document.querySelector('#content');
 const header = document.createElement('header');
@@ -33,7 +34,7 @@ function createHeader() {
         contactBtn.classList.add('navBtn');
         contactBtn.setAttribute('id', 'contactBtn');
         contactBtn.textContent = 'Contact';
-        //contactBtn.addEventListener('click', contactPage);
+        contactBtn.addEventListener('click', loadContact);
 
 
         navBar.appendChild(homeBtn);
